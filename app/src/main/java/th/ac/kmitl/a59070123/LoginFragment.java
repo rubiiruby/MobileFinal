@@ -35,7 +35,7 @@ public class LoginFragment extends Fragment {
     }
 
     void initLoginBTN() {
-        Register register = new Register();
+        final Register register = new Register();
 
         Button btn_login = (Button) getView().findViewById(R.id.login_login_btn);
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -63,9 +63,12 @@ public class LoginFragment extends Fragment {
 
                     Log.d("USER", "USER OR PASSWORD IS EMPTY");
                 }
-//                else if(userID_str.equals(register.getUser())){
-//
-//                }
+                else if(userID_str.equals(regiss) && pass_str.equals(register)){
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.main_view, new HomeFragment()).addToBackStack(null)
+                            .commit();
+                }
             }
         });
     }

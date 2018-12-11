@@ -52,7 +52,7 @@ public class RegisterFragment extends Fragment {
                 String pass_str = pass.getText().toString();
 
 
-                if (name_str.isEmpty() || pass_str.isEmpty() || age_str.isEmpty() || user_str.isEmpty()) {
+                if (user_str.isEmpty() || name_str.isEmpty() || pass_str.isEmpty() || age_str.isEmpty()) {
                     Toast.makeText(getActivity(),
                             "กรุณากรอกข้อมูลให้ครบถ้วน",
                             Toast.LENGTH_SHORT
@@ -87,7 +87,6 @@ public class RegisterFragment extends Fragment {
 
             }
         });
-
     }
 
     void addRegis(){
